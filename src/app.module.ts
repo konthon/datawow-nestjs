@@ -4,6 +4,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { CommunitiesModule } from './communities/communities.module';
+import { PostsModule } from './posts/posts.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { UsersModule } from './users/users.module';
 
@@ -15,6 +17,8 @@ import { UsersModule } from './users/users.module';
     }),
     PrismaModule,
     UsersModule,
+    PostsModule,
+    CommunitiesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
