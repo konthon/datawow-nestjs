@@ -10,7 +10,9 @@ export class PostsService {
   constructor(private readonly prisma: PrismaService) {}
 
   async getPosts(args?: GetPostsArgs) {
-    let mappedArgs: Parameters<typeof this.prisma.post.findMany>[0] = {};
+    let mappedArgs: Parameters<typeof this.prisma.post.findMany>[0] = {
+      orderBy: [{ updatedAt: 'desc' }],
+    };
     if (args?.title && args.title.length >= 2) {
       mappedArgs = {
         ...mappedArgs,
