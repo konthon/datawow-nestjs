@@ -4,6 +4,8 @@
 
 NestJS + TypeScript
 
+ไม่มีการทำ git flow เนื่องจากเป็น assignment ครับ
+
 ### Libraries
 
 - Prisma - ORM for query data from database
@@ -31,7 +33,7 @@ npm install
 
 2. สร้างไฟล์ `.env` ในโปรเจ็ค โดยสามารถคัดลอกได้จากไฟล์ `.env.example`
 
-3. เปิด terminal ในโปรเจ็ค แล้วทำการ migrate database ด้วยคำสั่ง
+3. ทำการ migrate database ด้วยคำสั่ง
 
 ```bash
 npm run prisma:migrate
