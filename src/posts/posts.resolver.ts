@@ -94,4 +94,9 @@ export class PostsResolver {
   async comments(@Parent() post: Post) {
     return this.commentsService.getCommentsByPost(post.id);
   }
+
+  @ResolveField('commentsCount', () => Int)
+  async commentsCount(@Parent() post: Post) {
+    return this.commentsService.getCommentsCountByPost(post.id);
+  }
 }
