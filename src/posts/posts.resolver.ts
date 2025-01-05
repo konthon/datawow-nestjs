@@ -2,6 +2,7 @@ import { UseGuards } from '@nestjs/common';
 import {
   Args,
   Int,
+  Mutation,
   Parent,
   Query,
   ResolveField,
@@ -16,7 +17,9 @@ import { Community } from 'src/communities/models/community';
 import { User } from 'src/users/models/user';
 import { UsersService } from 'src/users/users.service';
 
+import { CreatePostInput } from './dto/create-post.args';
 import { GetPostsArgs } from './dto/get-posts.args';
+import { UpdatePostInput } from './dto/update-post.args';
 import { Post } from './models/post';
 import { PostsService } from './posts.service';
 
@@ -46,6 +49,34 @@ export class PostsResolver {
     @Args({ nullable: true }) args?: GetPostsArgs,
   ) {
     return await this.postsService.getPosts({ ...args, authorId: user.id });
+  }
+
+  @Mutation(() => Post)
+  @UseGuards(LoggedInGuard)
+  async createPost(
+    @CurrentUser() user: User,
+    @Args('createPostInput') input: CreatePostInput,
+  ) {
+    return await this.postsService.createPost(user, input);
+  }
+
+  @Mutation(() => Post)
+  @UseGuards(LoggedInGuard)
+  async updatePost(
+    @CurrentUser() user: User,
+    @Args({ name: 'postId', type: () => Int }) postId: number,
+    @Args('updatePostInput') input: UpdatePostInput,
+  ) {
+    return await this.postsService.updatePost(user, postId, input);
+  }
+
+  @Mutation(() => Post)
+  @UseGuards(LoggedInGuard)
+  async deletePost(
+    @CurrentUser() user: User,
+    @Args({ name: 'postId', type: () => Int }) postId: number,
+  ) {
+    return await this.postsService.deletePost(user, postId);
   }
 
   @ResolveField('author', () => User)
