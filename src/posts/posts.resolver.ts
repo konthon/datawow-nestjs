@@ -1,3 +1,4 @@
+import { UseGuards } from '@nestjs/common';
 import {
   Args,
   Int,
@@ -8,6 +9,7 @@ import {
 } from '@nestjs/graphql';
 
 import { CurrentUser } from 'src/auth/auth.decorator';
+import { LoggedInGuard } from 'src/auth/guards/logged-in.guard';
 import { CommentsService } from 'src/comments/comments.service';
 import { CommunitiesService } from 'src/communities/communities.service';
 import { Community } from 'src/communities/models/community';
@@ -17,8 +19,6 @@ import { UsersService } from 'src/users/users.service';
 import { GetPostsArgs } from './dto/get-posts.args';
 import { Post } from './models/post';
 import { PostsService } from './posts.service';
-import { UseGuards } from '@nestjs/common';
-import { LoggedInGuard } from 'src/auth/guards/logged-in.guard';
 
 @Resolver(() => Post)
 export class PostsResolver {
