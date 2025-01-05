@@ -14,7 +14,7 @@ import { PostsService } from 'src/posts/posts.service';
 import { User } from './models/user';
 import { UsersService } from './users.service';
 
-@Resolver()
+@Resolver(() => User)
 export class UsersResolver {
   constructor(
     private readonly usersService: UsersService,
