@@ -63,6 +63,6 @@ export class CommentsResolver {
 
   @ResolveField('user', () => User)
   async user(@Parent() comment: Comment) {
-    return await this.usersService.getUser(comment.id);
+    return await this.usersService.getUser(comment.userId);
   }
 }
