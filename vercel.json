@@ -3,5 +3,11 @@
   "installCommand": "npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "public": false
+  "public": false,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "dist/src/main.js"
+    }
+  ]
 }
