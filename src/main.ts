@@ -7,7 +7,7 @@ import * as cookieParser from 'cookie-parser';
 
 import { AppModule } from './app.module';
 
-if (!process.env.IS_TS_NODE) {
+if (process.env.NODE_ENV === 'production') {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   require('module-alias/register');
 }
