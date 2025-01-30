@@ -24,7 +24,7 @@ async function bootstrap() {
       ...cookie,
       sameSite: 'none',
       secure: true,
-      domain: process.env.ORIGIN,
+      domain: process.env.COOKIE_DOMAIN,
     };
   }
 
