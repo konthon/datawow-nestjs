@@ -2,9 +2,9 @@ import './config/aliases';
 import { NestFactory } from '@nestjs/core';
 import { PrismaClient } from '@prisma/client';
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
-import * as session from 'express-session';
-import * as passport from 'passport';
-import * as cookieParser from 'cookie-parser';
+import session from 'express-session';
+import passport from 'passport';
+import cookieParser from 'cookie-parser';
 
 import { AppModule } from './app.module';
 
