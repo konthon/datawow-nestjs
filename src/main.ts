@@ -1,3 +1,4 @@
+import './config/aliases';
 import { NestFactory } from '@nestjs/core';
 import { PrismaClient } from '@prisma/client';
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
@@ -6,11 +7,6 @@ import * as passport from 'passport';
 import * as cookieParser from 'cookie-parser';
 
 import { AppModule } from './app.module';
-
-if (process.env.NODE_ENV === 'production') {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  require('module-alias/register');
-}
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {

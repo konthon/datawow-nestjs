@@ -8,8 +8,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "NODE_ENV=production ts-node -r tsconfig-paths/register src/main.ts",
-    "start:old": "nest start",
+    "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -49,6 +48,7 @@
     "@types/express": "^5.0.0",
     "@types/express-session": "^1.18.1",
     "@types/jest": "^29.5.2",
+    "@types/module-alias": "^2.0.4",
     "@types/node": "^20.3.1",
     "@types/passport-local": "^1.0.38",
     "@types/supertest": "^6.0.0",
