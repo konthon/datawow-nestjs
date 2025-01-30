@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> Project นี้ไม่ผ่านการทดสอบแล้ว จึงทำการเปลี่ยน database จาก SQLite เป็น Postgres เพื่อ deploy ต่อไป
+
 # Datawow assignment - Backend - NestJS
 
 ## ภาพรวม
