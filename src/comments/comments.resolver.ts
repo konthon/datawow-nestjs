@@ -10,10 +10,10 @@ import {
 } from '@nestjs/graphql';
 
 import { CurrentUser } from 'src/auth/auth.decorator';
-import { LoggedInGuard } from 'src/auth/guards/logged-in.guard';
 import { User } from 'src/users/models/user';
 import { UsersService } from 'src/users/users.service';
 
+import { LoggedInGuard } from '../auth/guards/logged-in.guard';
 import { CommentsService } from './comments.service';
 import { CommentInput } from './dto/comment.args';
 import { Comment } from './models/comment';

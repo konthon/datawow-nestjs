@@ -10,7 +10,6 @@ import {
 } from '@nestjs/graphql';
 
 import { CurrentUser } from 'src/auth/auth.decorator';
-import { LoggedInGuard } from 'src/auth/guards/logged-in.guard';
 import { CommentsService } from 'src/comments/comments.service';
 import { Comment } from 'src/comments/models/comment';
 import { CommunitiesService } from 'src/communities/communities.service';
@@ -18,6 +17,7 @@ import { Community } from 'src/communities/models/community';
 import { User } from 'src/users/models/user';
 import { UsersService } from 'src/users/users.service';
 
+import { LoggedInGuard } from '../auth/guards/logged-in.guard';
 import { CreatePostInput } from './dto/create-post.args';
 import { GetPostsArgs } from './dto/get-posts.args';
 import { UpdatePostInput } from './dto/update-post.args';
