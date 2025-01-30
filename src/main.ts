@@ -16,11 +16,21 @@ async function bootstrap() {
     },
   });
 
+  let cookie: session.CookieOptions = {
+    maxAge: 24 * 60 * 60 * 1000, // 24hrs
+  };
+  if (process.env.NODE_ENV === 'production') {
+    cookie = {
+      ...cookie,
+      sameSite: 'none',
+      secure: true,
+      domain: process.env.ORIGIN,
+    };
+  }
+
   app.use(
     session({
-      cookie: {
-        maxAge: 24 * 60 * 60 * 1000, // 24hrs
-      },
+      cookie,
       secret: 'datawow-backend-secret-placeholder',
       resave: false,
       saveUninitialized: false,
