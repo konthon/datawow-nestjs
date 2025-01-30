@@ -1,7 +1,7 @@
-import * as moduleAlias from 'module-alias';
+import { addAliases } from 'module-alias';
 import * as path from 'path';
 
-const rootPath = path.resolve(__dirname, 'src');
-moduleAlias.addAliases({
+const rootPath = path.resolve('src');
+addAliases({
   src: rootPath,
 });
